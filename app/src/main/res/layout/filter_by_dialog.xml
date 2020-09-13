@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/filterTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/filter_dialog_title"
+        android:textSize="22sp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+    />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        app:layout_constraintGuide_percent="0.35"
+    />
+
+    <CheckBox
+        android:id="@+id/filterShopping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/filter_shopping"
+
+        app:layout_constraintTop_toBottomOf="@id/filterTitle"
+        app:layout_constraintLeft_toLeftOf="@id/guideline"
+    />
+
+    <CheckBox
+        android:id="@+id/filterFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/filter_food"
+
+        app:layout_constraintTop_toBottomOf="@id/filterShopping"
+        app:layout_constraintLeft_toLeftOf="@id/guideline"
+    />
+
+    <CheckBox
+        android:id="@+id/filterBeauty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/filter_beauty"
+
+        app:layout_constraintTop_toBottomOf="@id/filterFood"
+        app:layout_constraintLeft_toLeftOf="@id/guideline"
+    />
+
+    <CheckBox
+        android:id="@+id/filterLeisure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/filter_leisure"
+
+        app:layout_constraintTop_toBottomOf="@id/filterBeauty"
+        app:layout_constraintLeft_toLeftOf="@id/guideline"
+    />
+
+    <Button
+        android:id="@+id/filterResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/filter_button"
+        android:backgroundTint="@color/filterButton"
+        android:textColor="@color/black"
+
+        app:layout_constraintTop_toBottomOf="@id/filterLeisure"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

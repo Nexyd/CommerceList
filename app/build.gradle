@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        applicationId "dani.kotlin.test"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        android.defaultConfig.vectorDrawables.useSupportLibrary = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile(
+                'proguard-android-optimize.txt'),
+                'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation project(':Interactors')
+    implementation project(':data')
+    implementation project(':domain')
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "androidx.legacy:legacy-support-core-utils:$support_core_version"
+    implementation "androidx.core:core-ktx:$androidx_core_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_version"
+    implementation "androidx.cardview:cardview:$card_view_version"
+    implementation "androidx.recyclerview:recyclerview:$recycler_view_version"
+
+    implementation "com.google.code.gson:gson:$gson_version"
+    implementation "com.google.android.gms:play-services-maps:$maps_version"
+    implementation "com.google.android.gms:play-services-location:$maps_version"
+    implementation "com.google.maps.android:android-maps-utils:$map_utils"
+    implementation "com.squareup.picasso:picasso:$picasso_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "me.relex:circleindicator:2.1.4"
+    implementation "com.github.ImaginativeShohag:Why-Not-Image-Carousel:v1.0.0"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofit_version"
+    implementation "io.reactivex.rxjava3:rxandroid:$rxandroid_version"
+    implementation "io.reactivex.rxjava3:rxjava:$rxandroid_version"
+
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$androidx_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+}

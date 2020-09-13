@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@android:color/white"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/commerceImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="0dp"
+            android:contentDescription="@string/commerce_image_placeholder"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/commerceName"
+            app:layout_constraintTop_toTopOf="parent"
+        />
+
+        <TextView
+            android:id="@+id/commerceName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/commerce_name_placeholder"
+
+            app:layout_constraintBottom_toTopOf="@id/commerceDescription"
+            app:layout_constraintLeft_toRightOf="@id/commerceImage"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+        />
+
+        <TextView
+            android:id="@+id/commerceDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/commerce_image_placeholder"
+
+            app:layout_constraintBottom_toTopOf="@id/commerceLocation"
+            app:layout_constraintLeft_toRightOf="@id/commerceImage"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/commerceName"
+        />
+
+        <TextView
+            android:id="@+id/commerceLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/commerce_location_placeholder"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/commerceImage"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/commerceDescription"
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

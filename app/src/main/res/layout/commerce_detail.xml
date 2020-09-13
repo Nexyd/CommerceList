@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="viewModel" type="dani.kotlin.app.CommerceViewModel"/>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingBottom="30dp">
+
+            <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+                android:id="@+id/carousel"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="10dp"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+            />
+
+            <ImageView
+                android:id="@+id/detailLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:visibility="gone"
+                android:contentDescription="@string/commerce_image_placeholder"
+
+                app:srcCompat="@drawable/ic_launcher_foreground"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+            />
+
+            <TextView
+                android:id="@+id/detailName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_name"
+                android:padding="5dp"
+
+                app:layout_constraintTop_toBottomOf="@id/carousel"
+                app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+            <TextView
+                android:id="@+id/detailDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_description"
+                android:padding="5dp"
+
+                app:layout_constraintTop_toBottomOf="@id/detailName"
+                app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+            <TextView
+                android:id="@+id/detailOpeningHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_opening_hours"
+                android:padding="5dp"
+
+                app:layout_constraintTop_toBottomOf="@id/detailDescription"
+                app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+            <TextView
+                android:id="@+id/detailPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_phone"
+                android:padding="5dp"
+
+                app:layout_constraintTop_toBottomOf="@id/detailOpeningHours"
+                app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+            <TextView
+                android:id="@+id/detailEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_email"
+                android:padding="5dp"
+
+                app:layout_constraintTop_toBottomOf="@id/detailPhone"
+                app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+            <TextView
+                android:id="@+id/detailTwitter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_twitter"
+                android:visibility="gone"
+                android:padding="5dp"
+
+                app:layout_constraintTop_toBottomOf="@id/detailEmail"
+                app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+            <TextView
+                android:id="@+id/detailInstagram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_instagram"
+                android:visibility="gone"
+                android:padding="5dp"
+
+                app:layout_constraintTop_toBottomOf="@id/detailTwitter"
+                app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+            <TextView
+                android:id="@+id/detailFacebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_facebook"
+                android:visibility="gone"
+                android:padding="5dp"
+
+                app:layout_constraintTop_toBottomOf="@id/detailInstagram"
+                app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+            <TextView
+                android:id="@+id/detailTripadvisor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_tripadvisor"
+                android:visibility="gone"
+                android:padding="5dp"
+
+                app:layout_constraintTop_toBottomOf="@id/detailFacebook"
+                app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+            <TextView
+                android:id="@+id/detailLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_address"
+                android:padding="5dp"
+
+                app:layout_constraintTop_toBottomOf="@id/detailTripadvisor"
+                app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+            <androidx.fragment.app.FragmentContainerView
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="5dp"
+
+                app:layout_constraintTop_toBottomOf="@id/detailLocation"
+                tools:context=".ui.CommerceDetail"
+            />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

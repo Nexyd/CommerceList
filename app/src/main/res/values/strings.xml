@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">CommerceList</string>
+    <string name="google_maps_android_key">AIzaSyD3fE1V3l0FjQY443caobF4osEwLe97PfM</string>
+
+    <!-- Placeholders -->
+    <string name="commerce_image_placeholder">Commerce Logo</string>
+    <string name="commerce_name_placeholder">Commerce Name</string>
+    <string name="commerce_location_placeholder">Commerce Location</string>
+
+    <!-- Filters -->
+    <string name="shopping_tag">SHOPPING</string>
+    <string name="food_tag">FOOD</string>
+    <string name="beauty_tag">BEAUTY</string>
+    <string name="leisure_tag">LEISURE</string>
+
+    <!-- Exception messages -->
+    <string name="illegal_exception">Activity cannot be null</string>
+    <string name="must_implement_dialog">%1$s must implement DialogListener</string>
+
+    <!-- Overflow app bar menu -->
+    <string name="filter_by_title">Filtrar resultados…</string>
+    <string name="sort_by_proximity_title">Ordenar por proximidad</string>
+
+    <!-- Filter Dialog -->
+    <string name="filter_dialog_title"><![CDATA[<b>Filtrar por categoria:</b>]]></string>
+    <string name="filter_shopping">Tiendas</string>
+    <string name="filter_food">Alimentación</string>
+    <string name="filter_beauty">Belleza</string>
+    <string name="filter_leisure">Ocio</string>
+    <string name="filter_button">Filtrar resultados</string>
+
+    <!-- Commerce Detail -->
+    <string name="detail_name"><![CDATA[<b>Nombre:</b>]]> %1$s</string>
+    <string name="detail_description"><![CDATA[<b>Descripcion:</b>]]> %1$s</string>
+    <string name="detail_opening_hours"><![CDATA[<b>Horarios:</b>]]> %1$s</string>
+    <string name="detail_phone"><![CDATA[<b>Teléfono:</b>]]> %1$s</string>
+    <string name="detail_email"><![CDATA[<b>Email:</b>]]> %1$s</string>
+    <string name="detail_address"><![CDATA[<b>Localización:</b>]]> %1$s</string>
+    <string name="detail_twitter"><![CDATA[<b>Twitter:</b>]]> %1$s</string>
+    <string name="detail_instagram"><![CDATA[<b>Instagram:</b>]]> %1$s</string>
+    <string name="detail_facebook"><![CDATA[<b>Facebook:</b>]]> %1$s</string>
+    <string name="detail_tripadvisor"><![CDATA[<b>Tripadvisor:</b>]]> %1$s</string>
+</resources>
