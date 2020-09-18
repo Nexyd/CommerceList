@@ -3,8 +3,9 @@ package dani.kotlin.data.repository
 import dani.kotlin.data.listener.CommerceApiListener
 import dani.kotlin.domain.entities.CommerceInfo
 import dani.kotlin.domain.listener.CommerceOperationsListener
+import javax.inject.Inject
 
-class CommerceRepository(
+class CommerceRepository @Inject constructor(
     private val apiListener: CommerceApiListener,
     private val opsListener: CommerceOperationsListener
 ) {

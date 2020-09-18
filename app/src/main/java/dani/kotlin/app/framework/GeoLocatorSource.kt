@@ -9,8 +9,9 @@ import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.LatLng
 import dani.kotlin.app.CommerceViewModel
 import dani.kotlin.data.listener.LocationListener
+import javax.inject.Inject
 
-class GeoLocator(
+class GeoLocatorSource @Inject constructor(
     private val context: Context
 ) : LocationListener {
 

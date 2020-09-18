@@ -10,10 +10,11 @@ import dani.kotlin.app.R
 import dani.kotlin.app.ui.adapter.CommerceAdapter
 import dani.kotlin.domain.entities.CommerceInfo
 import dani.kotlin.app.CommerceViewModel
+import dani.kotlin.app.dagger.component.DaggerAppComponent
 import dani.kotlin.app.databinding.ActivityMainBinding
-import dani.kotlin.app.framework.CommerceAPI
-import dani.kotlin.app.framework.GeoLocator
-import dani.kotlin.app.framework.PermissionChecker
+import dani.kotlin.app.framework.CommerceSource
+import dani.kotlin.app.framework.GeoLocatorSource
+import dani.kotlin.app.framework.PermissionCheckerSource
 import dani.kotlin.app.ui.presenter.MainPresenter
 import dani.kotlin.app.ui.listener.DialogListener
 import dani.kotlin.data.repository.CommerceRepository
@@ -29,28 +30,11 @@ class MainActivity : AppCompatActivity(), DialogListener {
     private lateinit var binding: ActivityMainBinding
     private lateinit var model: CommerceViewModel
     private lateinit var commerceAdapter: CommerceAdapter
-    private val presenter: MainPresenter
     private val commerces = ArrayList<CommerceInfo>()
     private var filters = ArrayList<String>()
-
-    init {
-        val permissionChecker = PermissionChecker(this)
-        val permissionRepository = PermissionRepository(permissionChecker)
-
-        val commerceApi = CommerceAPI()
-        val commerceOperations = CommerceOperations()
-        val commerceRepository = CommerceRepository(
-            commerceApi, commerceOperations)
-
-        val geoLocator = GeoLocator(this)
-        val geoRepository = LocationRepository(geoLocator)
-
-        presenter = MainPresenter(
-            PermissionInteractor(permissionRepository),
-            CommerceInteractor(commerceRepository),
-            LocationInteractor(geoRepository)
-        )
-    }
+    private val presenter: MainPresenter =
+        DaggerAppComponent.factory()
+        .create(this).getMainPresenter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

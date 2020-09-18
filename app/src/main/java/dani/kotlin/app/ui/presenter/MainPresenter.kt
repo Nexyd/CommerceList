@@ -12,8 +12,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class MainPresenter(
+class MainPresenter @Inject constructor(
     private val permission: PermissionInteractor,
     private val commerce: CommerceInteractor,
     private val location: LocationInteractor

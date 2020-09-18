@@ -3,8 +3,9 @@ package dani.kotlin.domain
 import dani.kotlin.domain.comparator.LocationComparator
 import dani.kotlin.domain.entities.CommerceInfo
 import dani.kotlin.domain.listener.CommerceOperationsListener
+import javax.inject.Inject
 
-class CommerceOperations : CommerceOperationsListener {
+class CommerceOperations @Inject constructor() : CommerceOperationsListener {
 
     override fun sortCommercesByProximity(commerces: List<CommerceInfo>,
         latitude: Double, longitude: Double): List<CommerceInfo>
